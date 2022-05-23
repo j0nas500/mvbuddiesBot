@@ -6,7 +6,17 @@ This is a Discord bot that meets my needs. Most of the packages are from [Androz
 - discord bot
 
 # Features
-- Music
+- SlashCommand Only
+- [Music](#Music)
+
+# Music
+`package:` [discord-player](https://github.com/Androz2091/discord-player)
+- YouTube, Spotify & Soundcloud Support
+- Audio filters
+
+## Commands
+- todo
+
 
 # Self Hosting
 - Clone the repository and enter `npm i` in the root directory of the project.
