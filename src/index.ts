@@ -6,6 +6,7 @@ import { onReady } from "./listeners/onReady";
 import { validateEnv } from "./utils/validateEnv";
 import { Player } from "discord-player";
 import { onMusic } from "./listeners/onMusic";
+import { onVoiceStateUpdate } from "./listeners/onVoiceStateUpdate";
 
 (async () => {
   // Check if all DotEnv Variables are set
@@ -27,7 +28,7 @@ import { onMusic } from "./listeners/onMusic";
   // currently Slash Commands only
   onInteractionCreate(BOT, player);
 
-  //onVoiceStateUpdate(BOT);
+  onVoiceStateUpdate(BOT, player);
 
   // get database connection
   //await connectDatabase();
