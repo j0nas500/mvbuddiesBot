@@ -7,21 +7,6 @@ import { validateEnv } from "./utils/validateEnv";
 import { Player } from "discord-player";
 import { onMusic } from "./listeners/onMusic";
 
-
-//const { generateDependencyReport } = require('@discordjs/voice');
-//console.log(generateDependencyReport());
-
-
-/*(async () => {
-  const videos = await (await yt.search('Rammstein Zeit')).find(id => id.id);
-  //const videos = await yt.search('y5kIrbG2gRc');
-  console.log('Videos:');
-  console.log(videos);
-  console.log(videos?.url)
-})()*/
-
-
-
 (async () => {
   // Check if all DotEnv Variables are set
   if (!validateEnv()) return;

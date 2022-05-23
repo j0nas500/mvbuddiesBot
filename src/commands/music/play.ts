@@ -67,12 +67,6 @@ export const play: Command = {
         });
       }
 
-
-      
-
-      //const queryType = await getSearchEngine(query);
-
-      //console.log(queryType);
       const result = await player.search(query, {
         requestedBy: interaction.user,
         searchEngine: QueryType.AUTO

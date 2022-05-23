@@ -12,45 +12,6 @@ export const onMusic = (player:Player): void => {
   });
 
   player.on("trackStart", (queue, track) => {
-  
-    /*const createMessage = (step: number, duration: number) => {
-      setTimeout(() => {
-        console.log("createMessage: "+duration+" "+step)
-
-        if (queue.metadata instanceof TextChannel) {
-          const step = 10000;
-          const song = queue.current;
-
-          const progress = queue.createProgressBar();
-          const perc = queue.getPlayerTimestamp();
-
-          const embed = new MessageEmbed()
-            .setAuthor({ name: "Now Playing", iconURL: queue.metadata.guild.iconURL() as string})
-            .setDescription(`🎶 | **[${song.title}](${song.url})**! (${perc.progress}%)\n\n` + progress.replace(/ 0:00/g, ' ◉ LIVE'));
-
-          queue.metadata.send({ embeds: [embed] }).then(msg => {          
-            deleteMessage(step, msg, duration);
-          });
-        };          
-      }, (duration + 1) * step);      
-    }
-
-    const deleteMessage = (step: number, msg: Message, duration: number) => {
-      setTimeout(() => {
-        console.log("deleteMessage: "+duration+" "+step)
-        if (queue.metadata instanceof TextChannel) {
-          queue.metadata.messages.delete(msg.id);
-        }
-      }, (duration + 1) * step);
-    }
-      
-    const song = queue.current;
-
-      for (let duration=0; duration < song.durationMS%10000; duration++) {
-        console.log("in loop: " + duration);
-        const step = 10000;
-        createMessage(step, duration);
-      }*/
 
     if (queue.metadata instanceof TextChannel) {
       const song = queue.current;
@@ -69,9 +30,7 @@ export const onMusic = (player:Player): void => {
         }, song.durationMS);
       });
     }
-  });
-
-    
+  });    
 
   /*
   player.on("trackAdd", (queue, track) => {

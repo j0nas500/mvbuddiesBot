@@ -10,7 +10,7 @@ This is a Discord bot that meets my needs. Most of the packages are from [Androz
 - [Music](#Music)
 
 # Music
-`package:` [discord-player](https://github.com/Androz2091/discord-player)
+`package` [discord-player](https://github.com/Androz2091/discord-player)
 - YouTube, Spotify & Soundcloud Support
 - Audio filters
 
