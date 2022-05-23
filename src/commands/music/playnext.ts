@@ -74,7 +74,9 @@ export const playnext: Command = {
       });
 
       if (!result || !result.tracks.length) {
-        await interaction.followUp("No results");
+        await interaction.followUp("No results").then(msg => {
+          setTimeout(() => interaction.channel?.messages.delete(msg.id) , 60000);
+        });
       } else {
         const song = result.tracks[0];
         queue.insert(song);
