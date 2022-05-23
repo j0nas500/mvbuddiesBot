@@ -11,7 +11,7 @@ export const jump: Command = {
     .addIntegerOption((option) => 
       option
         .setName("tracks")
-        .setDescription("The number of tracks to skip")
+        .setDescription("The number of the track in the queue to jump")
         .setMinValue(1)
         .setRequired(true)),
 
