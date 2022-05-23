@@ -1,4 +1,5 @@
 import { SlashCommandBuilder } from "@discordjs/builders";
+import { isValidMusicCommand } from "../../utils/isValidMusicCommand";
 import { Command } from "../_Command";
 
 export const stop: Command = {
@@ -11,14 +12,16 @@ export const stop: Command = {
     const queue = player.getQueue(interaction.guild?.id as string);
     if (!queue || !queue.playing) {
       await interaction.followUp("❌ | No music is being played!").then(msg => {
-        setTimeout(() => interaction.channel?.messages.delete(msg.id) , 60000);
+        setTimeout(() => interaction.channel?.messages.delete(msg.id).catch(err => console.error("Error with deleting msg " + err)) , 60000);
       });
     }
     else {
-      queue.destroy();
-      await interaction.followUp({ content: '🛑 | Stopped the player!' }).then(msg => {
-        setTimeout(() => interaction.channel?.messages.delete(msg.id) , 60000);
-      });
+      if (await isValidMusicCommand(client, interaction)) {
+        queue.destroy();
+        await interaction.followUp({ content: '🛑 | Stopped the player!' }).then(msg => {
+        setTimeout(() => interaction.channel?.messages.delete(msg.id).catch(err => console.error("Error with deleting msg " + err)) , 60000);
+        });
+      }
     }
   },
 };

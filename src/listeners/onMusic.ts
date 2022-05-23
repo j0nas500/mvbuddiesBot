@@ -25,7 +25,7 @@ export const onMusic = (player:Player): void => {
       queue.metadata.send({ embeds: [embed] }).then(msg => {           
         setTimeout(() => {
           if (queue.metadata instanceof TextChannel) {
-            queue.metadata.messages.delete(msg.id);
+            queue.metadata.messages.delete(msg.id).catch(err => console.error("Error with deleting msg " + err));
           }
         }, song.durationMS);
       });
@@ -44,7 +44,7 @@ export const onMusic = (player:Player): void => {
       queue.metadata.send("❌ | I was manually disconnected from the voice channel, clearing queue!").then(msg => {
         setTimeout(() => {
           if (queue.metadata instanceof TextChannel)
-          queue.metadata.messages.delete(msg.id);
+          queue.metadata.messages.delete(msg.id).catch(err => console.error("Error with deleting msg " + err));
         } , 600000)
       });
   });
@@ -54,7 +54,7 @@ export const onMusic = (player:Player): void => {
       queue.metadata.send("❌ | Nobody is in the voice channel, leaving...").then(msg => {
         setTimeout(() => {
           if (queue.metadata instanceof TextChannel)
-          queue.metadata.messages.delete(msg.id);
+          queue.metadata.messages.delete(msg.id).catch(err => console.error("Error with deleting msg " + err));
         } , 600000)
       });;
   });
@@ -65,7 +65,7 @@ export const onMusic = (player:Player): void => {
       .then(msg => {
         setTimeout(() => {
           if (queue.metadata instanceof TextChannel)
-          queue.metadata.messages.delete(msg.id);
+          queue.metadata.messages.delete(msg.id).catch(err => console.error("Error with deleting msg " + err));
         } , 600000)
       });;
   });

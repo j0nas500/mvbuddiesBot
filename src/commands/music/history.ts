@@ -19,7 +19,7 @@ export const history: Command = {
     const queue = player.getQueue(interaction.guild?.id as string);
     if (!queue || !queue.playing) {
       await interaction.followUp("❌ | No music is being played!").then(msg => {
-        setTimeout(() => interaction.channel?.messages.delete(msg.id) , 60000);
+        setTimeout(() => interaction.channel?.messages.delete(msg.id).catch(err => console.error("Error with deleting msg " + err)) , 60000);
       });
     }
     else {
@@ -28,7 +28,7 @@ export const history: Command = {
 
       if (page + 1 > totalPages) {
         await interaction.followUp(`❌ | Invalid Page. There are only a total of ${totalPages} pages of songs`).then(msg => {
-          setTimeout(() => interaction.channel?.messages.delete(msg.id) , 60000);
+          setTimeout(() => interaction.channel?.messages.delete(msg.id).catch(err => console.error("Error with deleting msg " + err)) , 60000);
         });
       }
       else {
@@ -47,7 +47,7 @@ export const history: Command = {
           .setThumbnail(currentTrack.thumbnail);
 
           await interaction.followUp({ embeds: [embed] }).then(msg => {
-            setTimeout(() => interaction.channel?.messages.delete(msg.id) , 60000);
+            setTimeout(() => interaction.channel?.messages.delete(msg.id).catch(err => console.error("Error with deleting msg " + err)) , 60000);
           });
       }
     }

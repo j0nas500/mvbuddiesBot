@@ -12,7 +12,7 @@ export const np: Command = {
     const queue = player.getQueue(interaction.guild?.id as string);
     if (!queue || !queue.playing) {
       await interaction.followUp("❌ | No music is being played!").then(msg => {
-        setTimeout(() => interaction.channel?.messages.delete(msg.id) , 60000);
+        setTimeout(() => interaction.channel?.messages.delete(msg.id).catch(err => console.error("Error with deleting msg " + err)) , 60000);
       });
     }
     else {
@@ -24,7 +24,7 @@ export const np: Command = {
         .setDescription(`🎶 | **[${song.title}](${song.url})**! (${perc.progress}%)\n\n` + progress.replace(/ 0:00/g, ' ◉ LIVE'));
 
       await interaction.followUp({ embeds: [embed] }).then(msg => {
-        setTimeout(() => interaction.channel?.messages.delete(msg.id) , 300000);
+        setTimeout(() => interaction.channel?.messages.delete(msg.id).catch(err => console.error("Error with deleting msg " + err)) , 300000);
       });
     }
   },
