@@ -1,9 +1,5 @@
 import { SlashCommandBuilder } from "@discordjs/builders";
 import { QueueFilters, QueueRepeatMode } from "discord-player";
-import { MessageEmbed } from "discord.js";
-import { stringify } from "querystring";
-import { getCamperData } from "../../modules/getCamperData";
-import { updateCamperData } from "../../modules/updateCamperData";
 import { Command } from "../_Command";
 
 export const filter: Command = {

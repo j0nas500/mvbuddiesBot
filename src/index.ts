@@ -1,15 +1,11 @@
-const Discord = require("discord.js");
-import { Client, VoiceState } from "discord.js";
+import { Client } from "discord.js";
 import { IntentOptions } from "./config/IntentOptions";
-import { connectDatabase } from "./database/connectDatabase";
+//import { connectDatabase } from "./database/connectDatabase";
 import { onInteractionCreate } from "./listeners/onInteractionCreate";
-//import { onVoiceStateUpdate } from "./listeners/onVoiceStateUpdate"
 import { onReady } from "./listeners/onReady";
 import { validateEnv } from "./utils/validateEnv";
-import  { Artist, Client as SpotifyClient } from "spotify-api.js"
-import { Player, Queue, Track } from "discord-player";
+import { Player } from "discord-player";
 import { onMusic } from "./listeners/onMusic";
-const { request } = require('undici');
 
 
 //const { generateDependencyReport } = require('@discordjs/voice');

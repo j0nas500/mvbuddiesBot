@@ -1,8 +1,4 @@
-const Discord = require("discord.js");
-import { Player, QueryType } from "discord-player";
-import { ChatInputApplicationCommandData, CommandInteraction, Interaction, VoiceChannel } from "discord.js";
-import  { Client as SpotifyClient } from "spotify-api.js"
-import { Client } from "discord.js";
+import { QueryType } from "discord-player";
 
 //export function getSearchEngineE (argument: string): QueryType {
 

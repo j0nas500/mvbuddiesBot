@@ -1,8 +1,6 @@
-import { REST } from "@discordjs/rest";
 import { Player } from "discord-player";
-import { Client, Message, MessageEmbed, TextChannel, VoiceChannel } from "discord.js"
-import { Routes } from "discord.js/node_modules/discord-api-types/v10";
-import { CommandList } from "../commands/_CommandList";
+import { MessageEmbed, TextChannel, } from "discord.js"
+
 
 export const onMusic = (player:Player): void => {
   player.on("error", (queue, error) => {

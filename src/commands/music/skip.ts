@@ -1,5 +1,4 @@
 import { SlashCommandBuilder } from "@discordjs/builders";
-import { MessageEmbed } from "discord.js";
 import { Command } from "../_Command";
 
 export const skip: Command = {

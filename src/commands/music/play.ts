@@ -1,9 +1,6 @@
-const Discord = require("discord.js");
-import { EmbedBuilder, SlashCommandBuilder } from "@discordjs/builders";
-import { createAudioPlayer, createAudioResource, DiscordGatewayAdapterCreator, getVoiceConnection, joinVoiceChannel, NoSubscriberBehavior, StreamType } from "@discordjs/voice";
-import { Player, QueryType, Queue } from "discord-player";
-import { Interaction, MessageEmbed, VoiceChannel } from "discord.js";
-import { getSearchEngine } from "../../utils/getSearchEngine";
+import { SlashCommandBuilder } from "@discordjs/builders";
+import { QueryType } from "discord-player";
+import { MessageEmbed} from "discord.js";
 //import { getSearchEngine } from "../music/getSearchEngine";
 
 import { Command } from "../_Command";

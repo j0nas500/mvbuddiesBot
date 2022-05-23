@@ -1,7 +1,6 @@
-const Discord = require("discord.js");
 import { SlashCommandBuilder, SlashCommandSubcommandsOnlyBuilder } from "@discordjs/builders";
 import { Player } from "discord-player";
-import { ChatInputApplicationCommandData, Client, CommandInteraction, Interaction } from "discord.js";
+import { Client, CommandInteraction } from "discord.js";
 
 // Interface define the structure of an object
 // @property data hold the command data to send to Discord
