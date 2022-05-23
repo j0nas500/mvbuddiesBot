@@ -15,8 +15,10 @@ import { remove } from "./music/remove";
 import { seek } from "./music/seek";
 import { shuffle } from "./music/shuffle";
 import { stop } from "./music/stop";
+import { skipTo } from "./music/skipTo";
+import { filter } from "./music/filter";
 
 // Creates a Command List that stores Command objects
 export const CommandList: Command[] = [
-  play, playnext, np, volume, loop, skip, previos, seek, pause, stop,
-  queue, history, jump, remove, ping, shuffle];
+  play, playnext, np, volume, loop, skip, skipTo, previos, seek, pause, stop,
+  queue, history, jump, remove, filter, ping, shuffle];
