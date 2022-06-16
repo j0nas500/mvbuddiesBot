@@ -1,4 +1,4 @@
-import { Client } from "discord.js";
+import { Client, GuildMember } from "discord.js";
 import { IntentOptions } from "./config/IntentOptions";
 //import { connectDatabase } from "./database/connectDatabase";
 import { onInteractionCreate } from "./listeners/onInteractionCreate";
@@ -7,19 +7,21 @@ import { validateEnv } from "./utils/validateEnv";
 import { Player } from "discord-player";
 import { onMusic } from "./listeners/onMusic";
 import { onVoiceStateUpdate } from "./listeners/onVoiceStateUpdate";
+import { connectDatabase } from "./database/connectDatabase";
 
 (async () => {
   // Check if all DotEnv Variables are set
   if (!validateEnv()) return;
+
+  //get database connection
+  //await connectDatabase();
+  //const createData = await createTempChannels("978294383138967603", options)
 
   // Client Bot (our discord Bot) receive Guild events
   const BOT = new Client({intents: IntentOptions});
 
   // instantiate the player
   const player = new Player(BOT);
-
-  // trigger Events for Music
-  onMusic(player);
 
   // triggered if the BOT is connected to the gateway and is ready to process events
   onReady(BOT);
@@ -30,8 +32,17 @@ import { onVoiceStateUpdate } from "./listeners/onVoiceStateUpdate";
 
   onVoiceStateUpdate(BOT, player);
 
-  // get database connection
-  //await connectDatabase();
+  // trigger Events for Music
+  onMusic(player);
+
+  
+
+
+  /*const data = await getTempChannels();
+  data.forEach(element => {
+    console.log("element: " + element.voiceChannelId + element.options)
+  });
+  console.log("data : " + data);*/
 
   // login as the Bot
   await BOT.login(process.env.TOKEN);

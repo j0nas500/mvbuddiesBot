@@ -6,7 +6,7 @@ import { CommandList } from "../commands/_CommandList";
 
 export const onVoiceStateUpdate = (client:Client, player: Player): void => {
   client.on("voiceStateUpdate", async (oldState, newState) => {
-    
+
     if (newState.channelId === null && oldState.member?.id == client.user?.id) {
       // if queue is not really destroyed (channeld deleted, bot disconnected) try to destroy it
       try {
